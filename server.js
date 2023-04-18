@@ -7,11 +7,10 @@ const PORT = process.env.PORT || 5000;
 // expressapp
 const app = express();
 
-// middleware 
+// middleware
 app.use(express.json());
 
 // routes
 app.use("/api/contacts", contactRoutes);
-
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

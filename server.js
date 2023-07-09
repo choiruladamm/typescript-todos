@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const contactRoutes = require("./routes/contactRoutes");
+const errorHandler = require("./middleware/errorHandler");
 
 const PORT = process.env.PORT || 5000;
 
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 // middleware
+app.use(errorHandler);
 app.use(express.json());
 
 // routes

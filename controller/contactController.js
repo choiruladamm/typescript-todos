@@ -1,3 +1,5 @@
+const asyncHandler = require("express-async-handler");
+
 // @desc Get all contacts
 // @route GET  /api/contacts
 // @acces public
@@ -8,10 +10,16 @@ const getContacts = (req, res) => {
 // @desc Create contact
 // @route POST  /api/contacts
 // @acces public
-const createContact = (req, res) => {
+const createContact = asyncHandler(async (req, res) => {
   console.log("The request body is: ", req.body);
+  // error handling
+  const { name, email, phone } = req.body;
+  if (!name || !email || !phone) {
+    res.status(400);
+    throw new Error("All fields are mandatory");
+  }
   res.status(201).json({ message: "Create contact" });
-};
+});
 
 // @desc GET contact
 // @route GET  /api/contacts/:id

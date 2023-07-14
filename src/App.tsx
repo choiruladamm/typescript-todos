@@ -1,6 +1,5 @@
 import { Toaster } from 'react-hot-toast'
-import AddTodo from './components/AddTodo'
-import TodoList from './components/TodoList'
+import { AddTodo, TodoList } from './components'
 
 const App = () => {
   return (

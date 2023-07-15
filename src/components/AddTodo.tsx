@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Input } from './Input'
-import { useTodo } from '../context/useTodo'
+import { useTodo } from '../context'
 import { toast } from 'react-hot-toast'
 
 export const AddTodo = () => {

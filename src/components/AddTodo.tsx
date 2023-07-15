@@ -17,7 +17,6 @@ export const AddTodo = () => {
     if (input.trim() !== '') {
       setTodos([...todos, input])
       setInput('')
-      console.log(input);
     }
   }
 

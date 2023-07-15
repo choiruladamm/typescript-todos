@@ -18,7 +18,7 @@ export const TodoList = () => {
   return (
     <ul className="grid max-w-lg gap-2 px-5 m-auto">
       {todos.map(todo => (
-        <li key={todo}>{todo}</li>
+        <li key={todo.id}>{todo.text}</li>
       ))}
     </ul>
   )

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { TodoItem } from './TodoItem'
 import { useTodo } from '../context/useTodo'
 import { SiStarship } from 'react-icons/si'
 
@@ -16,10 +18,10 @@ export const TodoList = () => {
   }
 
   return (
-    <ul className="grid max-w-lg gap-2 px-5 m-auto">
+    <motion.ul className="grid max-w-lg gap-2 px-5 m-auto">
       {todos.map(todo => (
-        <li key={todo.id}>{todo.text}</li>
+        <TodoItem key={todo.id} todo={todo} />
       ))}
-    </ul>
+    </motion.ul>
   )
 }

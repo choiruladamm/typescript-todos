@@ -5,6 +5,6 @@
 @tailwind utilities;
 
 body {
-  @apply text-gray-200 bg-slate-900;
+  @apply text-gray-200 bg-dark-900;
   @apply font-[inter]
 }

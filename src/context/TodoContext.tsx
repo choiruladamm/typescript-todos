@@ -34,7 +34,9 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
   }
 
   // delete todo method
-  const deleteTodo = (id: string) => {}
+  const deleteTodo = (id: string) => {
+    setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id))
+  }
 
   // update/edit todo method
   const editTodo = (id: string, text: string) => {}

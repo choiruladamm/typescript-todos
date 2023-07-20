@@ -39,7 +39,16 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
   }
 
   // update/edit todo method
-  const editTodo = (id: string, text: string) => {}
+  const editTodo = (id: string, text: string) => {
+    setTodos(prevTodos => {
+      return prevTodos.map(todo => {
+        if (todo.id === id) {
+          return { ...todo, text }
+        }
+        return todo
+      })
+    })
+  }
 
   // status todo method
   const updateTodoStatus = (id: string) => {}

@@ -51,7 +51,19 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
   }
 
   // status todo method
-  const updateTodoStatus = (id: string) => {}
+  const updateTodoStatus = (id: string) => {
+    setTodos(prevTodos => {
+      return prevTodos.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            status: todo.status === 'undone' ? 'completed' : 'undone',
+          }
+        }
+        return todo
+      })
+    })
+  }
 
   const value: TodoContextProps = {
     todos,

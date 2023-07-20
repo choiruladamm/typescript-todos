@@ -4,7 +4,11 @@ import cn from 'classnames'
 import { useTodo } from '../context'
 import { useRef } from 'react'
 import { toast } from 'react-hot-toast'
+
+// icons
 import { RiDeleteBin7Line } from 'react-icons/ri'
+import { BsCheck2Square } from 'react-icons/bs'
+import { TbRefresh } from 'react-icons/tb'
 
 export const TodoItem = (props: { todo: Todo }) => {
   const { todo } = props
@@ -16,6 +20,11 @@ export const TodoItem = (props: { todo: Todo }) => {
   const handleDelete = (todoId: string) => {
     deleteTodo(todoId)
     toast.success('todo deleted succesfully!')
+  }
+
+  const handleStatus = (todoId: string) => {
+    updateTodoStatus(todoId)
+    toast.success('todo status updated succesfully!')
   }
 
   return (
@@ -35,9 +44,23 @@ export const TodoItem = (props: { todo: Todo }) => {
         {todo.text}
       </motion.span>
       <div className="flex justify-between gap-5 text-white">
-        {/* button update */}
-
+        
         {/* button status */}
+        <button onClick={() => handleStatus(todo.id)}>
+          {todo.status === 'undone' ? (
+            <span className="flex items-center gap-2">
+              <BsCheck2Square />
+              Mark Completed
+            </span>
+          ) : (
+            <span className="flex items-center gap-2">
+              <TbRefresh />
+              Mark Undone
+            </span>
+          )}
+        </button>
+
+        {/* button update */}
 
         {/* button delete */}
         <button
@@ -48,6 +71,7 @@ export const TodoItem = (props: { todo: Todo }) => {
           <RiDeleteBin7Line />
           Delete
         </button>
+        
       </div>
     </motion.li>
   )

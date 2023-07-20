@@ -4,6 +4,9 @@ import React, { createContext, useState } from 'react'
 interface TodoContextProps {
   todos: Todo[]
   addTodo: (text: string) => void
+  deleteTodo: (id: string) => void
+  editTodo: (id: string, text: string) => void
+  updateTodoStatus: (id: string) => void
 }
 
 export interface Todo {
@@ -30,9 +33,21 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
     setTodos([...todos, newTodo])
   }
 
+  // delete todo method
+  const deleteTodo = (id: string) => {}
+
+  // update/edit todo method
+  const editTodo = (id: string, text: string) => {}
+
+  // status todo method
+  const updateTodoStatus = (id: string) => {}
+
   const value: TodoContextProps = {
     todos,
     addTodo,
+    deleteTodo,
+    editTodo,
+    updateTodoStatus,
   }
 
   return (

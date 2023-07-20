@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
-import { Todo } from '../context/TodoContext'
-import cn from 'classnames'
-import { useTodo } from '../context'
 import { useRef } from 'react'
 import { toast } from 'react-hot-toast'
+import cn from 'classnames'
+
+// todo context
+import { useTodo } from '../context'
+import { Todo } from '../context/TodoContext'
 
 // icons
 import { RiDeleteBin7Line } from 'react-icons/ri'

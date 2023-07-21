@@ -19,7 +19,7 @@ these steps:
 1. Clone the repository to your local machine.
 
 ```bash
-git@github.com:Yazdun/react-ts-fcc-tutorial.git
+https://github.com/choiruladamm/typescript-todos
 ```
 
 2. Open the cloned folder in your preferred code editor, install the required
@@ -29,13 +29,7 @@ git@github.com:Yazdun/react-ts-fcc-tutorial.git
 npm install
 ```
 
-3. To access the starter files for the tutorial, use the following command:
-
-```bash
-git checkout starter
-```
-
-4. Start the development server by running the following command:
+3. Start the development server by running the following command:
 
 ```bash
 npm run dev

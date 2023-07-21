@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-<h3 align="center">Type-Safe Todo App</h3>
+<h1 align="center">Type-Safe Todo App</h1>
 
 <div align="center">
 
